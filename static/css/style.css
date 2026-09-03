@@ -1,0 +1,109 @@
+/* Our stylesheet. COPY this file - do not type it.
+   CSS is not what we are learning this week. */
+
+:root {
+  --ink:     #12294a;   /* navy   */
+  --accent:  #f0a007;   /* amber  */
+  --bg:      #f4f6f9;
+  --line:    #e3e8ef;
+  --muted:   #6b7280;
+  --ok:      #0f7b52;
+  --bad:     #b42318;
+}
+
+body {
+  background: var(--bg);
+  color: #1f2937;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+main { flex: 1; }
+
+/* navbar */
+.app-nav { background: var(--ink); padding-block: .6rem; }
+.app-nav .navbar-brand,
+.app-nav .nav-link { color: rgba(255,255,255,.82); }
+.app-nav .nav-link:hover { color: #fff; }
+.app-nav .navbar-brand { font-weight: 600; }
+.brand-mark {
+  background: var(--accent); color: var(--ink); font-weight: 700;
+  padding: .1rem .4rem; border-radius: 5px; margin-right: .35rem;
+}
+.nav-user { color: rgba(255,255,255,.7); font-size: .875rem; }
+
+/* page furniture */
+.page-title { font-size: 1.5rem; font-weight: 650; color: var(--ink); margin: 0 0 .2rem; }
+.page-sub { color: var(--muted); font-size: .9rem; margin: 0 0 1.25rem; }
+
+.panel {
+  background: #fff; border: 1px solid var(--line);
+  border-radius: 10px; padding: 1.25rem;
+}
+.panel-title {
+  font-size: .78rem; text-transform: uppercase; letter-spacing: .07em;
+  color: var(--muted); margin-bottom: 1rem;
+}
+
+/* stat cards */
+.stat-card {
+  background: #fff; border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: 10px; padding: 1rem 1.1rem; height: 100%;
+}
+.stat-num { display: block; font-size: 1.9rem; font-weight: 680; color: var(--ink); }
+.stat-label { font-size: .8rem; color: var(--muted); }
+
+/* tables */
+.table thead th {
+  font-size: .75rem; text-transform: uppercase; letter-spacing: .05em;
+  color: var(--muted); font-weight: 600;
+}
+.table code { color: var(--ink); background: #f1f5f9; padding: .1rem .35rem; border-radius: 4px; }
+.empty-cell { text-align: center; color: var(--muted); padding: 2rem 1rem; }
+
+/* pills */
+.pill { font-size: .72rem; padding: .18rem .5rem; border-radius: 99px; font-weight: 600; }
+.pill-on  { background: #e7f6ee; color: var(--ok); }
+.pill-off { background: #fdeceb; color: var(--bad); }
+
+/* forms */
+.filter-bar { display: flex; gap: .6rem; flex-wrap: wrap; align-items: center; }
+.filter-bar .form-control { flex: 1 1 240px; }
+.filter-bar .form-select { flex: 0 1 170px; }
+.field-error { color: var(--bad); font-size: .82rem; margin-top: .25rem; }
+.btn-primary { background: var(--ink); border-color: var(--ink); font-weight: 500; }
+.btn-primary:hover { background: #1e3d68; border-color: #1e3d68; }
+
+/* student detail */
+.detail-grid { display: grid; grid-template-columns: 150px 1fr; gap: .55rem 1rem; margin: 0; }
+.detail-grid dt { color: var(--muted); font-weight: 500; font-size: .875rem; }
+.detail-grid dd { margin: 0; }
+.student-photo {
+  width: 130px; height: 130px; border-radius: 50%;
+  object-fit: cover; border: 3px solid var(--line);
+}
+.placeholder-photo {
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--ink); color: #fff; font-size: 2.4rem; font-weight: 600;
+}
+
+.plain-list { list-style: none; padding: 0; margin: 0; }
+.plain-list li {
+  display: flex; justify-content: space-between;
+  padding: .5rem 0; border-bottom: 1px solid var(--line);
+}
+.plain-list li:last-child { border-bottom: none; }
+
+/* login + footer */
+.login-card { border: 1px solid var(--line); border-radius: 10px; margin-top: 8vh; }
+.app-footer {
+  background: var(--ink); color: rgba(255,255,255,.55);
+  padding: 1rem 0; font-size: .82rem; margin-top: 2rem;
+}
+
+@media (max-width: 576px) {
+  .detail-grid { grid-template-columns: 1fr; }
+  .detail-grid dd { margin-bottom: .6rem; }
+}
